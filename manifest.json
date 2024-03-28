@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Reddit Feed Blocker",
+    "version": "1.0",
+    "description": "Blocks Reddits Home, Popular and All feeds, for increased productivity!",
+    "permissions": ["activeTab", "webRequest", "webRequestBlocking", "<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
