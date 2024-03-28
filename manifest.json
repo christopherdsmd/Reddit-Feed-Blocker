@@ -1,10 +1,20 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "Reddit Feed Blocker",
     "version": "1.0",
-    "description": "Blocks Reddits Home, Popular and All feeds, for increased productivity!",
-    "permissions": ["activeTab", "webRequest", "webRequestBlocking", "<all_urls>"],
-    "background": {
-      "service_worker": "background.js"
-    }
-  }
+    "description": "Blocks Reddit's 'Home', 'Popular', and 'All' feeds for increased productivity!",
+    "icons": {
+    },
+    "content_scripts": [
+        {
+            "js": ["reddit_blocker.js"],
+            "matches": [
+                "https://www.reddit.com/*",
+                "http://www.reddit.com/*",
+                "https://old.reddit.com/*",
+                "http://old.reddit.com/*"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
